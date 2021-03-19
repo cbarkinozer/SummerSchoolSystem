@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using Entity;
-//using DataAccess;
-//using BussinessLogic;
+using Entity; // CS0246
+using DataAccessLayer;
+using BussinessLogic;
 
 namespace SummerSchoolSystem
 {
@@ -19,12 +19,12 @@ namespace SummerSchoolSystem
         protected void Button1_Click1(object sender, EventArgs e) 
         {
 
-            //EntityStudent entityStudent = new EntityStudent();
-            //entityStudent.StdName = TxtName.Text;
-            //entityStudent.StdSurname = TxtSurname.Text;
-            //entityStudent.StdNumber = TxtNumber.Text;
-            //entityStudent.StdMail = TxtMail.Text;
-            //BussinessLogic.AddStudentBLL(entityStudent);
+            EntityStudent entityStudent = new EntityStudent();
+            entityStudent.StdName = TxtName.Text;
+            entityStudent.StdSurname = TxtSurname.Text;
+            entityStudent.StdNumber = TxtNumber.Text;
+            entityStudent.StdMail = TxtMail.Text;
+            BussinessLogic.AddStudentBLL(entityStudent);
         }
     }
 }
