@@ -87,11 +87,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DeleteStudent.aspx" />
     <Content Include="StudentList.aspx" />
+    <Content Include="UpdateStudent.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteStudent.aspx.cs">
+      <DependentUpon>DeleteStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteStudent.aspx.designer.cs">
+      <DependentUpon>DeleteStudent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +115,13 @@
     </Compile>
     <Compile Include="StudentList.aspx.designer.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudent.aspx.cs">
+      <DependentUpon>UpdateStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateStudent.aspx.designer.cs">
+      <DependentUpon>UpdateStudent.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

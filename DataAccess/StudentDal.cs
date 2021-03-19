@@ -49,6 +49,16 @@ namespace DataAccessLayer
             dataReader.Close();
             return values;
         }
+        public static bool DeleteStudent(int parameter) 
+        {
+            SqlCommand command3 = new SqlCommand("Delete From TblStudent where StudentId=@P1", Connection.con);
+            if (command3.Connection.State != ConnectionState.Open)
+            {
+                command3.Connection.Open();
+            }
+            command3.Parameters.AddWithValue("@P1",parameter);
+            return command3.ExecuteNonQuery() > 0 ;
+        }
     }
 }
 

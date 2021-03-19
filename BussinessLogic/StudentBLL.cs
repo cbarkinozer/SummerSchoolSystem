@@ -22,5 +22,13 @@ namespace BussinessLogic
         {
             return StudentDal.StudentList();
         }
+        public static bool DeleteStudentBLL(int parameter) 
+        {
+            if (parameter !=null )
+            {
+                return StudentDal.DeleteStudent(parameter);
+            }
+            return false;
+        }
     }
 }
