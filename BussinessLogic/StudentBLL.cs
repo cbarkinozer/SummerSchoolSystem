@@ -13,7 +13,7 @@ namespace BussinessLogic
                 && entityStudent.StudentNumber != null && entityStudent.StudentPassword != null
                 && entityStudent.StudentMail != null)
             {
-                //return StudentDal.AddStudent(entityStudent);
+                return StudentDal.AddStudent(entityStudent);
             }
             return -1;
 
@@ -24,11 +24,26 @@ namespace BussinessLogic
         }
         public static bool DeleteStudentBLL(int parameter) 
         {
-            if (parameter !=null )
+            if (parameter>= 0)
             {
                 return StudentDal.DeleteStudent(parameter);
             }
             return false;
         }
+        public List<EntityStudent> DetailBll(int id)
+        {
+            return StudentDal.StudentDetail(id);
+        }
+        public static bool UpdateStudentBll(EntityStudent entityStudent) 
+        {
+            if (entityStudent.StudentName != null && entityStudent.StudentSurname != null
+                && entityStudent.StudentNumber != null && entityStudent.StudentPassword != null
+                && entityStudent.StudentMail != null)
+            {
+                return StudentDal.AddStudent(entityStudent);
+            }
+            return false;
+        }
+
     }
 }

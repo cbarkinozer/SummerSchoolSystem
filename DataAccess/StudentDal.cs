@@ -59,6 +59,47 @@ namespace DataAccessLayer
             command3.Parameters.AddWithValue("@P1",parameter);
             return command3.ExecuteNonQuery() > 0 ;
         }
+
+        public static List<EntityStudent> StudentDetail(int id)
+        {
+            List<EntityStudent> values = new List<EntityStudent>();
+            SqlCommand command4 = new SqlCommand("Select * From TblStudent Where StdId=@P1", Connection.con);
+            command4.Parameters.AddWithValue("@P1", id);
+            if (command4.Connection.State != ConnectionState.Open)
+            {
+                command4.Connection.Open();
+            }
+            SqlDataReader dataReader = command4.ExecuteReader();
+            while (dataReader.Read())
+            {
+                EntityStudent entityStudent = new EntityStudent();
+                entityStudent.StudentId = Convert.ToInt32(dataReader["StudentId"].ToString());
+                entityStudent.StudentName = dataReader["StdName"].ToString();
+                entityStudent.StudentSurName = dataReader["StdSurname"].ToString();
+                entityStudent.StudentNumber = dataReader["StdNumber"].ToString();
+                entityStudent.StudentMail = dataReader["StdMail"].ToString();
+                entityStudent.StudentPassword = dataReader["StdPassword"].ToString();
+                entityStudent.StudentBalance = Convert.ToDouble(dataReader["StdBalance"].ToString());
+                values.Add(entityStudent);
+            }
+            dataReader.Close();
+            return values;
+        }
+
+        public static bool UpdateStudent(EntityStudent entityStudent) 
+        {
+            SqlCommand command5 = new SqlCommand("Update TblStudent Set StdName=@P1,StdSurname=@P2,StdNumber=@P3,StdPassword=@P4,StdMail=@P5",Connection.con);
+            if (command5.Connection.State != ConnectionState.Open)
+            {
+                command5.Connection.Open();
+            }
+            command5.Parameters.AddWithValue("@P1", entityStudent.Name);
+            command5.Parameters.AddWithValue("@P2", entityStudent.Surname);
+            command5.Parameters.AddWithValue("@P3", entityStudent.Number);
+            command5.Parameters.AddWithValue("@P4", entityStudent.Mail);
+            command5.Parameters.AddWithValue("@P5", entityStudent.Password);
+            return command5.ExecuteNonQuery() > 0;
+        }
     }
 }
 
