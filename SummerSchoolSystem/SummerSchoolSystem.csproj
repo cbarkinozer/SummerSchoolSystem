@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DeleteStudent.aspx" />
+    <Content Include="Lessons.aspx" />
     <Content Include="StudentList.aspx" />
     <Content Include="UpdateStudent.aspx" />
     <Content Include="Web.config" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="DeleteStudent.aspx.designer.cs">
       <DependentUpon>DeleteStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lessons.aspx.cs">
+      <DependentUpon>Lessons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lessons.aspx.designer.cs">
+      <DependentUpon>Lessons.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

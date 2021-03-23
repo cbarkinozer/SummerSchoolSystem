@@ -21,7 +21,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="StudentList.Aspx">Students</a></li>
                 <li><a href="WebForm1.Aspx">New Application</a></li>
-                <li><a href="#">Lessons</a></li>
+                <li><a href="Lessons.Aspx">Lessons</a></li>
                 <li><a href="#">Quotas</a></li>
                 <li><a href="#">Help</a></li>
             </ul>

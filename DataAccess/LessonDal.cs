@@ -32,5 +32,16 @@ namespace DataAccess
             dataReader.Close();
             return values;
         }
+        public static int AddApply(EntityApplyForm entityApplyForm) 
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO TblApplyForm (StudentId,LessonId) VALUES(@P1,@P2)",Connection.con);
+            command.Parameters.AddWithValue("@P1",entityApplyForm.StudentId);
+            command.Parameters.AddWithValue("@P2", entityApplyForm.LessonId);
+            if (command.Connection.State != ConnectionState.Open)
+            {
+                command.Connection.Open();
+            }
+            return command.ExecuteNonQuery();
+        }
     }
 }
